@@ -1,27 +1,23 @@
-# Build the score. Run `make` — or Ctrl+Shift+B in VS Code.
+MAIN = variaciones
+OUT  = build
+SRC  = $(MAIN).ly $(wildcard music/*.ly)
 
-MAIN = pasacalle
-OUT_DIR = build
+# `make` = PDF + MIDI + MP3, all in build/
+all: $(OUT)/$(MAIN).pdf $(OUT)/$(MAIN).mp3
 
-all: $(OUT_DIR)/$(MAIN).pdf
+# One LilyPond run produces both the PDF and the MIDI
+$(OUT)/$(MAIN).pdf $(OUT)/$(MAIN).midi &: $(SRC)
+	@mkdir -p $(OUT)
+	lilypond -o $(OUT)/ $(MAIN).ly
 
-# Rebuilds if the master, settings, or any music file changes
-$(OUT_DIR)/$(MAIN).pdf: $(MAIN).ly settings.ly $(wildcard music/*.ly)
-	@mkdir -p $(OUT_DIR)
-	lilypond -o $(OUT_DIR)/ $(MAIN).ly
+# MIDI -> MP3 (TiMidity renders, FFmpeg encodes; no big .wav on disk)
+$(OUT)/$(MAIN).mp3: $(OUT)/$(MAIN).midi
+	timidity -Ow -o - $< 2>/dev/null | ffmpeg -y -loglevel error -i - -q:a 2 $@
 
-scratch:
-	@mkdir -p $(OUT_DIR)
-	lilypond -o $(OUT_DIR)/scratch scratch.ly
-
-play: $(OUT_DIR)/$(MAIN).midi
-	timidity $(OUT_DIR)/$(MAIN).midi
-
-# Send to GrandOrgue (start it first, with a sample set loaded)
-organ: $(OUT_DIR)/$(MAIN).midi
-	aplaymidi -p $$(aplaymidi -l | grep -i grandorgue | awk '{print $$1}') $(OUT_DIR)/$(MAIN).midi
+play: $(OUT)/$(MAIN).midi
+	timidity $<
 
 clean:
-	rm -rf $(OUT_DIR) *.pdf *.midi *.log *.ps lilypond-tmp-* -.pdf
+	rm -rf $(OUT)
 
-.PHONY: all scratch play organ clean
+.PHONY: all play clean
