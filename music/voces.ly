@@ -32,7 +32,7 @@ material = {
 
   %% cc. 1–4 · 2 voces arriba (S + A) + bajo
   \bloque
-    { dos4 la fas | sols mi'8 re dos4 | re mi fas | mi8 re dos si la sols | }       % S
+    { dos4 la fas' | si, mi8 re dos4 | re mi fas | mi8 re dos si la sols | }       % S
     { mi4 dos re | si sols' la | si la la sols8 fas mi re dos si |}       % A
     \vacio                                            % X
     \vacio                                                % Y
@@ -48,38 +48,38 @@ material = {
 
   %% cc. 9–12 · 4 voces + bajo (Y baja al pentagrama del bajo)
   \bloque
-    { dos8 la16 si dos8 re16 mi fas4| r8 mi16 fas | sols8 la16 si la4~ |  la4 sols4 fas ~ | fas mi re |}                      % S
+    { dos8 la16 si dos8 re16 mi fas4| r8 dos16 re mi8 fas16 sols la4~ |  la4 sols4 fas ~ | fas mi re |}                      % S
     { la8 r8 r4 r8 si16 la | sols4 r4 r8 fas16 mi | re8 mi16 fas mi8 sols16 dos| si8 la | sols2. |}         % A
     \vacio
     \vacio               % Y
 
   %% cc. 13–16 · 1 sola voz (corcheas)
   \bloque
-    { dos8 dos16 si dos8 la dos la | sols8 mi'16 re mi8 sols, mi' la, | re la mi' sols, re' fas, |sols si'16 la si8 sols mi re |}  % S
-    {la8 r8 mi4 fas | mi re dos | si2.|  si8 sols'16 fas sols8 si sols fas |}                                                         % A
+    { dos8 dos16 si dos8 la dos la | sols8 mi'16 re mi8 sols, mi' la, | re la mi' sols, fas' fas, |si si'16 la si8 sols mi re |}  % S
+    {la8 r8 mi4 fas | mi re dos | si2.|  sols'8 sols16 fas sols8 si sols fas |}                                                         % A
     \vacio                                                              % X
     \vacio         
     
       %% cc. 17-20
 
      \bloque
-    { dos4 mi fas8 re16 dos | si la sol fas mi' re dos mi las, fas sols las | si8 dos16 re mi mi re mi fas mi re dos| si la sols si mi, sols si mi sols mi fas sols | }  % S
-    {mi8 la dos si la4 | dos, sol' dos, | re la' la | sols mi si' |}                                                         % A
+    { dos4 mi8 sol fas8 re16 dos | si la sol fas mi' re dos mi las, fas sols las | si8 dos16 re mi mi re mi fas mi re dos| si4 r4 sols'4| }  % S
+    {mi8 la dos si la4 | dos, sol' dos, | re la' la | sols8 sols16 fas mi res res mi si mi sols si}                                                         % A
     \vacio                                                              % X
     \vacio        
     
     
          \bloque
     { la4 sols fas | sols mi dos|  re la'8 sols fas mi | re dos si la sols si | }  % S
-    {dos4 ~ dos4~ dos8 si~| si8 dos4 sols la8 ~ | la4 mi la | sols re8 dos si sols' |}                                                         % A
+    {dos4 ~ dos8 si4~ si8~| si8 dos4 sols la8 ~ | la4 mi la | sols re8 dos si sols' |}                                                         % A
     \vacio                                                              % X
     \vacio    
 
 
 
          \bloque
-    { dos8 dos16 si dos8 la dos la | sols8 mi'16 re mi8 sols, mi' la, | re la mi' sols, re' fas, |sols si'16 la si8 sols mi re |}  % S
-    {la8 r8 mi4 fas | mi re dos | si2.|  si8 sols'16 fas sols8 si sols fas |}                                                         % A
+    { la8 dos16 mi, dos'16 mi, dos'16 mi, dos' fas, dos' fas, | si sols si sols mi' sols, mi' sols, mi' la, mi' la, | re la re la re mi, dos' mi, dos' re, la' re, | sols sols si sols mi la dos re  mi sols, re' sols, | }  % S
+    {r4 la,2 | r4 mi'8 re dos4 | si2. | si4 dos si8 mi}                                                          % A
     \vacio                                                              % X
     \vacio    
 
