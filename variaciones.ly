@@ -58,5 +58,5 @@ inferior = \new Staff = "inferior" \with { midiInstrument = "church organ" } <<
       \override SpacingSpanner.strict-note-spacing = ##t
     }
   }
-  \midi { \tempo 4 = 90 }
+  \midi { \tempo 4 = 60 }
 }

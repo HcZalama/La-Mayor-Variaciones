@@ -9,6 +9,7 @@ all: $(OUT)/$(MAIN).pdf $(OUT)/$(MAIN).mp3
 $(OUT)/$(MAIN).pdf $(OUT)/$(MAIN).midi &: $(SRC)
 	@mkdir -p $(OUT)
 	lilypond -o $(OUT)/ $(MAIN).ly
+	@cp $(OUT)/$(MAIN).pdf $(MAIN).pdf
 
 # MIDI -> MP3 (TiMidity renders, FFmpeg encodes; no big .wav on disk)
 $(OUT)/$(MAIN).mp3: $(OUT)/$(MAIN).midi
