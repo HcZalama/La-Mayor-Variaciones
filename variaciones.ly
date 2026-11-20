@@ -14,15 +14,20 @@
   system-system-spacing.basic-distance = #10
   system-system-spacing.padding = #0.5
 }
-#(set-global-staff-size 26)
+#(set-global-staff-size 21)   % tamaño de la partitura (antes 26; más pequeño = más cabe)
 
+\include "articulate.ly"
 \include "music/herramientas.ly"
 \include "music/voces.ly"
 
 global = { \key la \major \time 3/4 }
 
 %% --- El bajo obstinado (4 compases) -----------------------
-celula = { la,2 re4 | mi2 fas4 | si,4 dos re | mi2. | }
+celula = { la,2 re4 | mi2 fas4 | si,4 dos re | mi2. | } 
+
+%%{ la,4~la,8.. r32 re8.. r32 | mi4~mi8.. r32 fas8.. r32 | si,8.. r32 dos8.. r32 re8.. r32 | mi2~mi8. r16 | }
+
+ 
 
 %% 10 sistemas de 2 células. \bar y \break son del Score: valen
 %% para los dos pentagramas.
@@ -47,8 +52,29 @@ inferior = \new Staff = "inferior" \with { midiInstrument = "church organ" } <<
   \new Voice = "B" { \voiceTwo \bajo }
 >>
 
+%% ===========================================================
+%%  ARTICULACIÓN EN EL AUDIO (solo MIDI/MP3; la partitura no cambia)
+%%
+%%  \articulate hace que cada nota suene un poco más corta que lo
+%%  escrito, dejando una pequeña "coma" antes de la siguiente.
+%%  Cuánto se acorta una nota normal:
+%%     '(15 . 16)  casi legato        '(7 . 8)  natural (por defecto)
+%%     '(3 . 4)    bastante separado
+#(set! ac:normalFactor '(7 . 8))
+%%
+%%  Control nota a nota (se ve en la partitura Y se oye):
+%%     dos4(  re mi)   ligadura      → esas notas suenan legato, sin coma
+%%     dos4--          tenuto        → nota entera, sin coma
+%%     dos4-_          portato       → separada (3/4 de su valor)
+%%     dos4-.          staccato      → muy separada (1/2)
+%%     dos4\turn       grupeto       → se toca el adorno de verdad
+%% ===========================================================
+
+musica = \new PianoStaff << \superior \inferior >>
+
+%% 1. PARTITURA (PDF)
 \score {
-  \new PianoStaff << \superior \inferior >>
+  \musica
   \layout {
     indent = 0
     \context {
@@ -58,5 +84,10 @@ inferior = \new Staff = "inferior" \with { midiInstrument = "church organ" } <<
       \override SpacingSpanner.strict-note-spacing = ##t
     }
   }
-  \midi { \tempo 4 = 60 }
+}
+
+%% 2. AUDIO (MIDI → MP3), con articulación
+\score {
+  \articulate \musica
+  \midi { \tempo 4 = 70 }
 }

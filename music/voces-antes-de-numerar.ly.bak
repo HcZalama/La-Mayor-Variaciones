@@ -1,0 +1,341 @@
+%% ===========================================================
+%%  voces.ly — AQUÍ SE COMPONE
+%%
+%%  La pieza = 18 bloques de 4 compases = 72 compases.
+%%  2 bloques por sistema → 9 sistemas.
+%%
+%%  Cada bloque lleva las 4 voces apiladas, siempre en este orden:
+%%
+%%      \bloque
+%%        { ... }   % S  voz 1 — SIEMPRE pentagrama superior
+%%        { ... }   % A  voz 2 — superior, o abajo con el bajo (\aInf)
+%%        { ... }   % X  voz 3 — extra (casi siempre \vacio)
+%%        { ... }   % Y  voz 4 — extra (casi siempre \vacio)
+%%
+%%  Dentro de cada voz: UN COMPÁS POR LÍNEA, con su número a la derecha.
+%%
+%%  Una voz que calla:  \vacio      Todo el bloque vacío:  \bloqueVacio
+%%
+%%  REGLAS
+%%   · Cada voz mide 4 compases y cada compás acaba en |  (si no,
+%%     LilyPond avisa con la línea exacta: "voz A: 3 compases en vez de 4").
+%%   · cc. 1–28: escritos en \relative. Cada voz es UNA línea continua:
+%%     la 1ª nota de un bloque se coloca cerca de la última nota de ESA
+%%     voz en el bloque anterior. Ajusta con ' o , si hace falta.
+%%     (Inicios: S = do'' · A y X = do' · Y = do)
+%%   · cc. 29–72: escritos en \fixed do (alturas absolutas):
+%%     do' = Do central (Do4), la' = La4, dos'' = Do#5, mi'' = Mi5.
+%%   · Cambiar de pentagrama:  \aInf  \aSup  \xInf  \xSup  \yInf  \ySup
+%%     Ej.:  { \aInf dos4 mi la, | ... }   ← la voz A baja al bajo.
+%%     Se queda allí hasta que escribas \aSup.
+%%   · Tonalidad La mayor: escribe las alteradas  fas  dos  sols
+%%   · Ligaduras entre bloques: permitidas (las voces son continuas).
+%%   · %% ?? = nota mía de la transcripción del manuscrito: revisar.
+%% ===========================================================
+
+material = {
+
+  %% ╔═════════════════════════════════════════════════════════╗
+  %% ║  SISTEMA 1 · cc. 1–8                                    ║
+  %% ╚═════════════════════════════════════════════════════════╝
+
+  %% ── Bloque 1 · cc. 1–4 · S + A ─────────────────────────────
+  \bloque
+    {                                   % S
+      dos4 la fas'                    | % c.1
+      si, mi8 re dos4                 | % c.2
+      re mi fas                       | % c.3
+      mi8 re dos si la sols           | % c.4
+    }
+    {                                   % A
+      mi4 dos la'                     | % c.1
+      sols2 la4                       | % c.2
+      si la2                          | % c.3
+      sols8 fas mi re dos si        | % c.4
+    }
+    \vacio                              % X
+    \vacio                              % Y
+
+  %% ── Bloque 2 · cc. 5–8 · S + A ─────────────────────────────
+  \bloque
+    {                                   % S
+      la4 la'8 sols fas4~             | % c.5
+      fas mi re~                      | % c.6
+      re dos si~                      | % c.7
+      si la si                        | % c.8
+    }
+    {                                   % A
+      dos4 r r8 la'                  | % c.5
+      sols fas sols si la4~           | % c.6
+      la8 sols la mi fas re           | % c.7
+      sols, si dos mi sols4           | % c.8
+    }
+    \vacio                              % X
+    \vacio                              % Y
+
+  %% ╔═════════════════════════════════════════════════════════╗
+  %% ║  SISTEMA 2 · cc. 9–16                                   ║
+  %% ╚═════════════════════════════════════════════════════════╝
+
+  %% ── Bloque 3 · cc. 9–12 · S + A ────────────────────────────
+  \bloque
+    {                                   % S
+      dos8 la16 si dos8 re16 mi fas4  | % c.9
+      r16 si,16 dos re mi8 fas16 sols la4~ | % c.10
+      la4 sols4 fas~                  | % c.11
+      fas mi re                       | % c.12
+    }
+    {                                   % A
+      la8 r8 r4 r8 si,16 la            | % c.9
+      sols4 r4 r8 fas'16 mi            | % c.10
+      re8 mi16 fas mi8 sols16 la si8 la | % c.11
+      la4 sols2                       | % c.12
+    }
+    \vacio                              % X
+    \vacio                              % Y
+
+  %% ── Bloque 4 · cc. 13–16 · S + A ───────────────────────────
+  \bloque
+    {                                   % S
+      dos8 dos16 si dos8 la dos la    | % c.13
+      sols8 mi'16 re mi8 sols, mi' la, | % c.14
+      re la mi' sols, fas' fas,       | % c.15
+      sols si'16 la si8 sols mi re    | % c.16
+    }
+    {                                   % A
+      la8 r8 mi4 fas                  | % c.13
+      mi re dos                       | % c.14
+      si2.                            | % c.15
+      mi8 sols16 fas sols8 si sols fas | % c.16
+    }
+    \vacio                              % X
+    \vacio                              % Y
+
+  %% ╔═════════════════════════════════════════════════════════╗
+  %% ║  SISTEMA 3 · cc. 17–24                                  ║
+  %% ╚═════════════════════════════════════════════════════════╝
+
+  %% ── Bloque 5 · cc. 17–20 · S + A ───────────────────────────
+  %% ?? c.17 (S) y c.18 (A): "sol" = Sol natural. ¿Querías sols?
+  \bloque
+    {                                   % S
+      dos8 r8 la' sol fas4            | % c.17
+      r16 dos16 si dos mi dos re mi las, fas sols las | % c.18
+      si16 re dos re mi mi re mi fas mi re dos | % c.19
+      si4 r16 la si dos si la sols si | % c.20
+    }
+    {                                   % A
+      mi8 la dos4 re16 re, mi fas     | % c.17
+      sol4 dos,2                      | % c.18
+      re4 la' la                      | % c.19
+      r16 sols, la si dos dos re mi re dos si re | % c.20
+    }
+    \vacio                              % X
+    \vacio                              % Y
+
+  %% ── Bloque 6 · cc. 21–24 · S + A ───────────────────────────
+  %% ?? c.21: "sol" = Sol natural. ¿Querías sols?
+  \bloque
+    {                                   % S
+      la8 la' sol fas fas mi          | % c.21
+      mi re dos mi las,8. fas'16      | % c.22
+      fas8 re mi dos la re                       | % c.23
+      sols,2.                          | % c.24
+    }
+    {                                   % A
+      dos4 r4 la'                     | % c.21
+      sol2 fas8 dos                   | % c.22
+      re si sols' mi fas4             | % c.23
+      r8 si, mi re16 dos re8 dos16 si | % c.24
+    }
+    \vacio                              % X
+    \vacio                              % Y
+
+  %% ╔═════════════════════════════════════════════════════════╗
+  %% ║  SISTEMA 4 · cc. 25–32                                  ║
+  %% ╚═════════════════════════════════════════════════════════╝
+
+  %% ── Bloque 7 · cc. 25–28 · S (semicorcheas) + A ────────────
+  \bloque
+    {                                   % S
+      la8 dos16 mi, dos'16 mi, dos'16 mi, dos' fas, dos' fas, | % c.25
+      si sols si sols mi' sols, mi' sols, mi' la, mi' la,     | % c.26
+      re la re la re sols, dos mi, dos' mi, si' re,           | % c.27
+      mi' sols, fas sols mi' la, mi mi' re fas, sols re'     | % c.28
+    }
+    {                                   % A
+      dos8 r8 la2                         | % c.25
+      r4 mi'8 re dos4                 | % c.26
+      si2.                            | % c.27
+      si4 dos si8 mi                  | % c.28
+    }
+    \vacio                              % X
+    \vacio                              % Y
+
+  %% ═══════════════════════════════════════════════════════════
+  %%  cc. 29–72 · TRANSCRIPCIÓN DEL MANUSCRITO (borrador de Claude)
+  %%  Escrito en \fixed do (alturas absolutas: la' = La4, dos'' = Do#5).
+  %% ═══════════════════════════════════════════════════════════
+
+  %% ── Bloque 8 · cc. 29–32 · coral a 4 (S A X Y) ─────────────
+  %% ?? c.29: puntito Sol#4 en el 1er tiempo, ignorado. Nota grave del
+  %%          3er tiempo leída Re4 (podría ser Do#4).
+  %% ?? c.30: escribiste "change" en azul aquí → dejé lo gris. La nota
+  %%          de arriba del 3er tiempo lleva un "#" dibujado: leí Sol#5.
+  %% ?? c.31: círculo rojo (¿a revisar?). Leí Si5 La5 Si5 La5 arriba y
+  %%          la voz interior Re5→Do#5 (retardo sobre el Do# del bajo).
+  %% ?? c.32: La5→Sol#5 arriba (retardo 4-3). Línea azul ondulada: no
+  %%          la entendí como notas.
+  % \bloque
+  %   \fixed do {                         % S
+  %     dos''4 dos'' fas''              | % c.29
+  %     mi''4 si'' sols''               | % c.30
+  %     si''4 la''8 si'' la''4          | % c.31
+  %     la''2 sols''4                   | % c.32
+  %   }
+  %   \fixed do {                         % A
+  %     la'4 la' re''                   | % c.29
+  %     si'4 mi'' mi''                  | % c.30
+  %     re''4 re''8 dos'' si'4          | % c.31
+  %     mi''2.                          | % c.32
+  %   }
+  %   \fixed do {                         % X
+  %     mi'4 mi' la'                    | % c.29
+  %     sols'4 dos'' dos''              | % c.30
+  %     si'4 la' si'                    | % c.31
+  %     dos''4 si'8 la' si'4            | % c.32
+  %   }
+  %   \fixed do {                         % Y
+  %     s2 re'4                         | % c.29
+  %     mi'4 sols' fas'                 | % c.30
+  %     fas'4 mi' fas'8 la'             | % c.31
+  %     s2.                             | % c.32
+  %   }
+
+  %% ╔═════════════════════════════════════════════════════════╗
+  %% ║  SISTEMA 5 · cc. 33–40                                  ║
+  %% ╚═════════════════════════════════════════════════════════╝
+
+  %% ── Bloque 9 · cc. 33–36 · S + A (todo azul en el manuscrito)
+  %% ?? c.34: signo tipo "b" antes de la 2ª nota de arriba: leí Fa
+  %%          natural (Fa♮5 sobre Mi = E7 b9). Si era Fa# → fas''.
+  %% ?? c.36: el mismo signo en la voz de abajo: leí Sol natural (sol').
+  %%          El garabato gris encima del 3er tiempo: lo puse como \turn.
+  \bloque
+   {                         % S
+   la'4 sols8 sol fas fa | mi4 mib8 re dos4 | re mi8 mis fas4 mi re dos8 si
+    }
+    {                         % A
+  la4 dos8 si la4  | sols8 sol fas fa la4~ la8 sols8~ sols4 fas8 la sols sol fas sols la sols
+    }
+    \vacio                              % X
+    \vacio                              % Y
+
+  %% ── Bloque 10 · cc. 37–40 · S + A (acompañamiento) ─────────
+  %% ?? cc.37–40, voz A: MUY dudosa (corcheas con líneas adicionales).
+  %%          Ritmo "silencio-corchea" leído, alturas aproximadas.
+  %% ?? c.40: el garabato sobre el La4 de arriba = \turn (supuesto).
+  \bloque
+    \fixed do {                         % S
+      la''4 dos'' fas''               | % c.37
+      si'4 sols' la'                  | % c.38
+      re''4 mi'' si'                 | % c.39
+      la'2\turn sols'4                | % c.40
+    }
+    {                         % A
+      mi4 r8 mi r si sols r r mi' r dos si r r la r fas' si, dos16 re si2
+    }
+    \vacio                              % X
+    \vacio                              % Y
+
+
+  %% ╔═════════════════════════════════════════════════════════╗
+  %% ║  SISTEMA 6 · cc. 41–48                                  ║
+  %% ╚═════════════════════════════════════════════════════════╝
+
+  %% ── Bloque 11 · cc. 41–44 · notas largas + corcheas ────────
+  %% ?? c.41: "A" en un círculo arriba a la izquierda: ¿letra de
+  %%          ensayo? No la puse.
+  %% ?? cc.41–44: las corcheas de A son una suposición armónica.
+  %%          La línea azul ondulada y la X azul: sin transcribir.
+
+
+ 
+
+
+
+
+
+  %% ── Bloque 12 · cc. 45–48 · S + A ──────────────────────────
+  %% ?? c.45 y 46: leí el "Y" largo como silencio de negra.
+  %% ?? c.47: semicorcheas rojas superpuestas: suposición.
+  %% ?? c.48: rojo Y azul encima de lo gris (dos alternativas).
+  %%          Puse un arpegio de Mi; elige tú.
+  \bloque
+     {                         % S
+            sols8 mi' dos sols fas fas' fas sols, mi' sols, mi' la, re si' la mi fas dos' dos2 si4      | % c.48
+    }
+    {                         % A
+      dos4 dos dos r dos dos r dos la' la sols2
+    }
+    \vacio                              % X
+    \vacio                              % Y
+
+  %% ╔═════════════════════════════════════════════════════════╗
+  %% ║  SISTEMA 7 · cc. 49–56                                  ║
+  %% ╚═════════════════════════════════════════════════════════╝
+
+  %% ── Bloque 13 · cc. 49–52 · TRESILLOS en cada negra (S) + A ─
+  %% S: arpegios en tresillos de corchea sobre la armonía del bajo
+  %%    (La–Re | Mi–Fa#m | Sim–Do#m–Re | Mi7).
+  %% A: notas largas que sostienen la armonía.
+  %% \tuplet 3/2 4 { ... } = un tresillo de corcheas en cada negra.
+  \bloque
+    {                         % S
+      \tuplet 3/2 4 { la4. dos,8 si dos re dos re sols, la si mi, fas sols las si dos re sol fas mis sols dos,~dos si la sols la si dos re mi fas sols8. la16}   | % c.49
+  
+    }
+    {                         % A
+      mi2 fas4 mi re dos si2 fas'4 mi2.                      | % c.52
+    }
+    \vacio                              % X
+    \vacio                              % Y
+
+
+
+ \bloque
+     {la4  la,16 dos mi sols la, dos re fas  | sols, si re fas si, re fas sols las, dos fas las si fas, si re mi mi, sols dos fas la, si fas' mi mi, la dos mi mi,la si mi mi, sols re'}
+     \vacio
+    \vacio                              % X
+    \vacio                              % Y
+
+
+
+ \bloque
+     {dos8 dos16 re mi8 re16 mi fas8 mi16 fas sols4 r2 r8 si16 la sols mis dos si la re dos si la mi' dos si la mi' si la sols re' fas, sols  | }
+     {r2. r8 mi16 fas sols8 fas16 sols las8 sols16 las | si4 mis, fas mi2~mi8 re}
+    \vacio                              % X
+    \vacio                              % Y
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

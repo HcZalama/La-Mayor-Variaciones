@@ -1,0 +1,66 @@
+\version "2.24.0"
+\language "espanol"
+\header { tagline = ##f }
+\paper {
+  paper-width = 297\mm
+  paper-height = 210\mm
+  line-width = 287\mm
+  left-margin = 5\mm
+  top-margin = 5\mm
+  bottom-margin = 5\mm
+  ragged-right = ##f
+  ragged-bottom = ##f
+  print-page-number = ##f
+  system-system-spacing.basic-distance = #10
+  system-system-spacing.padding = #0.5
+}
+#(set-global-staff-size 21)   % tamaño de la partitura (antes 26; más pequeño = más cabe)
+
+\include "music/herramientas.ly"
+\include "music/voces.ly"
+
+global = { \key la \major \time 3/4 }
+
+%% --- El bajo obstinado (4 compases) -----------------------
+celula = { la,2 re4 | mi2 fas4 | si,4 dos re | mi2. | } 
+
+%%{ la,4~la,8.. r32 re8.. r32 | mi4~mi8.. r32 fas8.. r32 | si,8.. r32 dos8.. r32 re8.. r32 | mi2~mi8. r16 | }
+
+ 
+
+%% 10 sistemas de 2 células. \bar y \break son del Score: valen
+%% para los dos pentagramas.
+bajo = {
+  \repeat unfold 10 { \celula \bar "||" \celula \break }
+  \bar "|."
+}
+
+%% --- Pentagrama superior: 4 voces (S arriba siempre) ------
+superior = \new Staff = "superior" \with { midiInstrument = "church organ" } <<
+  \global
+  \new Voice = "S" { \voiceOne   \relative do'' \keepWithTag #'S \material }
+  \new Voice = "A" { \voiceTwo   \relative do'  \keepWithTag #'A \material }
+  \new Voice = "X" { \voiceThree \relative do'  \keepWithTag #'X \material }
+  \new Voice = "Y" { \voiceFour  \relative do   \keepWithTag #'Y \material }
+>>
+
+%% --- Pentagrama inferior: el bajo -------------------------
+inferior = \new Staff = "inferior" \with { midiInstrument = "church organ" } <<
+  \global
+  \clef bass
+  \new Voice = "B" { \voiceTwo \bajo }
+>>
+
+\score {
+  \new PianoStaff << \superior \inferior >>
+  \layout {
+    indent = 0
+    \context {
+      \Score
+      proportionalNotationDuration = #(ly:make-moment 1/6)
+      \override SpacingSpanner.uniform-stretching = ##t
+      \override SpacingSpanner.strict-note-spacing = ##t
+    }
+  }
+  \midi { \tempo 4 = 70 }
+}
