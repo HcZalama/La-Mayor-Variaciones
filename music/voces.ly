@@ -44,14 +44,14 @@ material = {
     {                                   % S
       dos4 la fas'                             | % c.1
       si, mi8 re dos4                          | % c.2
-      re mi fas                                | % c.3
-      mi8 re dos si la sols                    | % c.4
+      re4 mi8 re16 mi fas4                                | % c.3
+      mi8 dos si re sols, si                    | % c.4
     }
     {                                   % A
       mi4 dos re8 la'                          | % c.1
       sols2 la4                                | % c.2
-      si la2                                   | % c.3
-      sols8 fas mi re dos si                   | % c.4
+      si la4. si8                                  | % c.3
+      sols8 la sols fas si, re                | % c.4
     }
     \vacio                              % X
     \vacio                              % Y
@@ -60,7 +60,7 @@ material = {
   \bloque
     {                                   % S
       la4 la'8 sols fas4~                      | % c.5
-      fas mi re~                               | % c.6
+      fas mi8 re dos4                               | % c.6
       re dos si~                               | % c.7
       si la si                                 | % c.8
     }
@@ -86,13 +86,13 @@ material = {
       la8 la16 si dos8 re16 mi fas4            | % c.13
       r8  mi16 fas sols8 la16 si la4~            | % c.14
       la4 sols4 fas~                           | % c.15
-      fas mi re                                | % c.16
+      fas8 mi mi4 re                                | % c.16
     }
     {                                   % A
       la8 r8 r4 r8 si,16 la                     | % c.13
       sols4 r4 r8 fas'16 mi                    | % c.14
       re8 mi16 fas mi8 sols16 la si8 la        | % c.15
-      la4 sols2\turn                             | % c.16
+      la8 sols8 sols4 sols\turn                             | % c.16
     }
     \vacio                              % X
     \vacio                              % Y
@@ -147,8 +147,8 @@ material = {
     {                                   % S
       la8 dos16 mi, dos'16 mi, dos'16 mi, dos' fas, dos' fas, | % c.25
       si sols si sols mi' sols, mi' sols, mi' la, mi' la, | % c.26
-      re la re la dos sols dos mi, si' fas si re, | % c.27
-      mi' sols, fas sols mi' la, mi mi' re fas, sols re' | % c.28
+      re la re la mi' sols, dos mi, si' fas si fas' | % c.27
+      mi sols, fas sols mi' la, mi mi' re fas, sols re' | % c.28
     }
     {                                   % A
       dos8 r8 la2                              | % c.25
@@ -162,15 +162,15 @@ material = {
   %% ── Bloque 8 · cc. 29–32 ──────────────────────────────
       \bloque
     {                                   % S
-      dos8 la' sol fas fas mi                   | % c.29
+      dos4 la'8 sol fas mi                   | % c.29
       mi re dos mi las,8. fas'16               | % c.30
-      fas8 re mi dos la re                     | % c.31
+      fas8 re mi dos la16 si32 dos re8                     | % c.31
       sols,2 sols'4\turn                                | % c.32
     }
     {                                   % A
       mi4 r4 la                              | % c.29
       sol8 fas mi sol fas8 dos                            | % c.30
-      re si sols' mi fas4                      | % c.31
+      re si sols' mi fa8 fa                      | % c.31
       r8 si, mi re16 dos re8 dos16 si          | % c.32
     }
     \vacio                              % X
@@ -222,13 +222,13 @@ material = {
       la4 sols8 sol fas fa                    | % c.33
       mi4 mib8 re dos4                         | % c.34
       re mi8 mis fas4                          | % c.35
-      mi re dos8 si                            | % c.36
+      mi re dos4                            | % c.36
     }
     {                         % A
-      dos4 dos'8 si la4                         | % c.33
+      dos4 r8 si' la4                         | % c.33
       sols8 sol fas fa la4~                    | % c.34
       la8 sols8~ sols4 fas8 la                 | % c.35
-      sols sol fas sols la sols                | % c.36
+      sols sol fas sols la sols~                | % c.36
     }
     \vacio                              % X
     \vacio                              % Y
@@ -270,9 +270,9 @@ material = {
       dos2 si4                                 | % c.44
     }
     {                         % A
-      sols4 dos,8 si la4                             | % c.41
+      sols4 mi8 si la4                             | % c.41
       r dos dos                                | % c.42
-      r dos la'                                | % c.43
+      r mi la                                | % c.43
       la sols2\turn                              | % c.44
     }
     \vacio                              % X
@@ -294,7 +294,7 @@ material = {
       mi2 fas4                                 | % c.45
       mi re dos                                | % c.46
       si2 fas'4                                | % c.47
-      mi2.                                     | % c.48
+      mi2 re4                                     | % c.48
     }
     \vacio                              % X
     \vacio                              % Y
@@ -331,6 +331,61 @@ material = {
     }
     \vacio                              % X
     \vacio       
+
+
+
+
+
+% \bloque
+%          {                              % S
+%       r2. r2. r2. r2.
+%     }
+% \vacio
+%     \vacio                              % X
+%     \vacio     
+
+\bloque
+         {                              % S
+      la4 dos,8 mi fas la~ | la sol si, re mi sol~ sol fas las, dos re fas mis4 fas8 la sols mis' |
+    }
+{dos4 r4 re8 dos si4 r4 dos8 si las4 r4 si8 la sols dos re8 fas mis16 res dos si }
+    \vacio                              % X
+    \vacio     
+
+
+
+\bloque
+         {                              % S
+      fas8 mi16 re dos8 si la sols la dos re la sols si dos si mi4 re4 dos4 r8 dos16 dos dos8 dos16 dos 
+    }
+{ la4 r4 fas' mis fas4  re8 sols, sols'4 la8 mi sols fas mis r2 }
+    \vacio                              % X
+    \vacio     
+
+
+
+
+\bloque
+         {                              % S
+      dos8 la la fas sols16 la sols la sol dos, sol' dos, re fas fas la si res, si' res, mi sol sol si dos dos, mi sol fas8 si si mis, re' dos16 si la8 r8
+    }
+\vacio
+\vacio 
+    {r2. sol'4 fas la sol sol fas8 sols r4 si do8 r8}                            % X
+        
+
+
+
+
+\bloque
+         {                              % S
+      r2. r2. r2. r2.
+    }
+\vacio
+    \vacio                              % X
+    \vacio     
+
+
 
 
 }

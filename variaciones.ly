@@ -27,7 +27,7 @@ celula = { la,2 re4 | mi2 fas4 | si,4 dos re | mi2. | }
 
 %%{ la,4~la,8.. r32 re8.. r32 | mi4~mi8.. r32 fas8.. r32 | si,8.. r32 dos8.. r32 re8.. r32 | mi2~mi8. r16 | }
 
-celulamenor = { fas2 dos4  | re2 si,4  | mi4 la, si, | dos2.} 
+celulamenor = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2.} 
 
  
 
@@ -36,7 +36,9 @@ celulamenor = { fas2 dos4  | re2 si,4  | mi4 la, si, | dos2.}
 bajo = {
   \repeat unfold 6 { \celula \bar "||" \celula \break }
   la,2 re4 | sol2 dos4 | fas2 si,4 | dos4 sis, dos | 
-\repeat unfold 2 { \celulamenor \bar "||" \celulamenor \break }
+\repeat unfold 1 { \celulamenor \bar "||" \celulamenor \break }
+
+ si,2. dos2. re2. mi2. la,2.
   \bar "|."
 }
 
@@ -93,5 +95,5 @@ musica = \new PianoStaff << \superior \inferior >>
 %% 2. AUDIO (MIDI → MP3), con articulación
 \score {
   \articulate \musica
-  \midi { \tempo 4 = 70 }
+  \midi { \tempo 4 = 75 }
 }
