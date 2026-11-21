@@ -170,7 +170,7 @@ material = {
     {                                   % A
       mi4 r4 la                              | % c.29
       sol8 fas mi sol fas8 dos                            | % c.30
-      re si sols' mi fa8 fa                      | % c.31
+      re si sols' mi fas8 fa                      | % c.31
       r8 si, mi re16 dos re8 dos16 si          | % c.32
     }
     \vacio                              % X
@@ -358,7 +358,7 @@ material = {
          {                              % S
       fas8 mi16 re dos8 si la sols la dos re la sols si dos si mi4 re4 dos4 r8 dos16 dos dos8 dos16 dos 
     }
-{ la4 r4 fas' mis fas4  re8 sols, sols'4 la8 mi sols fas mis r2 }
+{ la4 r4 fas' mis fas4  re8 sols, sols'4 dos,8 mi sols fas mis4 r2 }
     \vacio                              % X
     \vacio     
 
@@ -367,11 +367,11 @@ material = {
 
 \bloque
          {                              % S
-      dos8 la la fas sols16 la sols la sol dos, sol' dos, re fas fas la si res, si' res, mi sol sol si dos dos, mi sol fas8 si si mis, re' dos16 si la8 r8
+      dos8 la la fas sols16 la sols la sol dos, sol' dos, re fas fas la si res, si' res, mi sol sol si dos dos, mi sol re16 fas' mi re dos8 r8 re8 dos16 si la8 r8
     }
 \vacio
 \vacio 
-    {r2. sol'4 fas la sol sol fas8 sols r4 si do8 r8}                            % X
+    {r2.  sol'4 fas la sol sol fas8 sol'16 fas mis2 fas8 r8}                            % X
         
 
 

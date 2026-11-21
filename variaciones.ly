@@ -29,6 +29,8 @@ celula = { la,2 re4 | mi2 fas4 | si,4 dos re | mi2. | }
 
 celulamenor = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2.} 
 
+celulamenor_ = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2 do4 } 
+
  
 
 %% 10 sistemas de 2 células. \bar y \break son del Score: valen
@@ -36,7 +38,7 @@ celulamenor = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2.}
 bajo = {
   \repeat unfold 6 { \celula \bar "||" \celula \break }
   la,2 re4 | sol2 dos4 | fas2 si,4 | dos4 sis, dos | 
-\repeat unfold 1 { \celulamenor \bar "||" \celulamenor \break }
+\repeat unfold 1 { \celulamenor \bar "||" \celulamenor_ \break }
 
  si,2. dos2. re2. mi2. la,2.
   \bar "|."
