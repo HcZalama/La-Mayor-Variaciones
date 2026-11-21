@@ -1,0 +1,101 @@
+\version "2.24.0"
+\language "espanol"
+\header { tagline = ##f }
+\paper {
+  paper-width = 297\mm
+  paper-height = 210\mm
+  line-width = 287\mm
+  left-margin = 5\mm
+  top-margin = 5\mm
+  bottom-margin = 5\mm
+  ragged-right = ##f
+  ragged-bottom = ##f
+  print-page-number = ##f
+  system-system-spacing.basic-distance = #10
+  system-system-spacing.padding = #0.5
+}
+#(set-global-staff-size 21)   % tamaño de la partitura (antes 26; más pequeño = más cabe)
+
+\include "articulate.ly"
+\include "music/herramientas.ly"
+\include "music/voces.ly"
+
+global = { \key la \major \time 3/4 }
+
+%% --- El bajo obstinado (4 compases) -----------------------
+celula = { la,2 re4 | mi2 fas4 | si,4 dos re | mi2. | } 
+
+%%{ la,4~la,8.. r32 re8.. r32 | mi4~mi8.. r32 fas8.. r32 | si,8.. r32 dos8.. r32 re8.. r32 | mi2~mi8. r16 | }
+
+celulamenor = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2.} 
+
+celulamenora = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2 do8 r8 } 
+
+ 
+
+%% 10 sistemas de 2 células. \bar y \break son del Score: valen
+%% para los dos pentagramas.
+bajo = {
+  \repeat unfold 6 { \celula \bar "||" \celula \break }
+  la,2 re4 | sol2 dos4 | fas2 si,4 | dos4 sis, dos | 
+\repeat unfold 1 { \celulamenor \bar "||" \celulamenora \break }
+
+ si,2. dos2. re2. mi2. la,2.
+  \bar "|."
+}
+
+%% --- Pentagrama superior: 4 voces (S arriba siempre) ------
+superior = \new Staff = "superior" \with { midiInstrument = "church organ" } <<
+  \global
+  \new Voice = "S" { \voiceOne   \relative do'' \keepWithTag #'S \material }
+  \new Voice = "A" { \voiceTwo   \relative do'  \keepWithTag #'A \material }
+  \new Voice = "X" { \voiceThree \relative do'  \keepWithTag #'X \material }
+  \new Voice = "Y" { \voiceFour  \relative do   \keepWithTag #'Y \material }
+>>
+
+%% --- Pentagrama inferior: el bajo -------------------------
+inferior = \new Staff = "inferior" \with { midiInstrument = "church organ" } <<
+  \global
+  \clef bass
+  \new Voice = "B" { \voiceTwo \bajo }
+>>
+
+%% ===========================================================
+%%  ARTICULACIÓN EN EL AUDIO (solo MIDI/MP3; la partitura no cambia)
+%%
+%%  \articulate hace que cada nota suene un poco más corta que lo
+%%  escrito, dejando una pequeña "coma" antes de la siguiente.
+%%  Cuánto se acorta una nota normal:
+%%     '(15 . 16)  casi legato        '(7 . 8)  natural (por defecto)
+%%     '(3 . 4)    bastante separado
+#(set! ac:normalFactor '(7 . 8))
+%%
+%%  Control nota a nota (se ve en la partitura Y se oye):
+%%     dos4(  re mi)   ligadura      → esas notas suenan legato, sin coma
+%%     dos4--          tenuto        → nota entera, sin coma
+%%     dos4-_          portato       → separada (3/4 de su valor)
+%%     dos4-.          staccato      → muy separada (1/2)
+%%     dos4\turn       grupeto       → se toca el adorno de verdad
+%% ===========================================================
+
+musica = \new PianoStaff << \superior \inferior >>
+
+%% 1. PARTITURA (PDF)
+\score {
+  \musica
+  \layout {
+    indent = 0
+    \context {
+      \Score
+      proportionalNotationDuration = #(ly:make-moment 1/6)
+      \override SpacingSpanner.uniform-stretching = ##t
+      \override SpacingSpanner.strict-note-spacing = ##t
+    }
+  }
+}
+
+%% 2. AUDIO (MIDI → MP3), con articulación
+\score {
+  \articulate \musica
+  \midi { \tempo 4 = 75 }
+}

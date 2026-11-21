@@ -14,7 +14,7 @@
   system-system-spacing.basic-distance = #10
   system-system-spacing.padding = #0.5
 }
-#(set-global-staff-size 21)   % tamaño de la partitura (antes 26; más pequeño = más cabe)
+#(set-global-staff-size 20)   % tamaño de la partitura (antes 26, luego 21; más pequeño = más cabe)
 
 \include "articulate.ly"
 \include "music/herramientas.ly"
@@ -29,7 +29,7 @@ celula = { la,2 re4 | mi2 fas4 | si,4 dos re | mi2. | }
 
 celulamenor = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2.} 
 
-celulamenor_ = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2 do4 } 
+celulamenora = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2 do8. r16 } 
 
  
 
@@ -37,10 +37,32 @@ celulamenor_ = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2 do4 }
 %% para los dos pentagramas.
 bajo = {
   \repeat unfold 6 { \celula \bar "||" \celula \break }
-  la,2 re4 | sol2 dos4 | fas2 si,4 | dos4 sis, dos | 
-\repeat unfold 1 { \celulamenor \bar "||" \celulamenor_ \break }
 
- si,2. dos2. re2. mi2. la,2.
+
+    %% cc. 53–56 · dúo en el pentagrama del bajo (arriba: el tema en S;
+  %%            la otra voz del dúo está en voces.ly, voz X)
+  la,4 dos si,     | % c.53
+  sols, la, re    | % c.54
+  sol fas si,  | % c.55
+  dos8 re mi2  | % c.56
+
+
+  %% cc. 49–52 · variación del bajo en semicorcheas (arriba: el tema en S)
+  %% OJO: el bajo se escribe en alturas ABSOLUTAS (do = Do3, do' = Do4).
+  la4 r16 dos re mi fas sols la si               | % c.49
+  sols8 si, mi sols la16 sols la dos              | % c.50
+  re8 si, la,16 la sols la fas mi fas si,         | % c.51
+  sols8 la16 si la8 dos16 si, dos la mi sols      | % c.52
+
+
+
+  %% cc. 57–60
+  la,4 r re4 | sol2 dos4 | fas2 si,4 | dos4 sis, dos | 
+\repeat unfold 1 { \celulamenor \bar "||" \celulamenora \break }
+
+
+
+ si,2. dos2. re2. mi2~ <mi, mi>4 la,2.   % cc.69–73 (c.72: Mi2 añadido en el 3er tiempo)
   \bar "|."
 }
 
@@ -51,6 +73,9 @@ superior = \new Staff = "superior" \with { midiInstrument = "church organ" } <<
   \new Voice = "A" { \voiceTwo   \relative do'  \keepWithTag #'A \material }
   \new Voice = "X" { \voiceThree \relative do'  \keepWithTag #'X \material }
   \new Voice = "Y" { \voiceFour  \relative do   \keepWithTag #'Y \material }
+  %% voz invisible tan larga como el bajo: el pentagrama de arriba
+  %% no se corta aunque las voces acaben antes
+  \new Voice { #(skip-of-length bajo) }
 >>
 
 %% --- Pentagrama inferior: el bajo -------------------------
@@ -89,7 +114,8 @@ musica = \new PianoStaff << \superior \inferior >>
       \Score
       proportionalNotationDuration = #(ly:make-moment 1/6)
       \override SpacingSpanner.uniform-stretching = ##t
-      \override SpacingSpanner.strict-note-spacing = ##t
+      %% (strict-note-spacing quitado: hacía que las semicorcheas
+      %%  chocaran con las barras de compás en los compases densos)
     }
   }
 }
@@ -97,5 +123,5 @@ musica = \new PianoStaff << \superior \inferior >>
 %% 2. AUDIO (MIDI → MP3), con articulación
 \score {
   \articulate \musica
-  \midi { \tempo 4 = 75 }
+  \midi { \tempo 4 = 70 }
 }
