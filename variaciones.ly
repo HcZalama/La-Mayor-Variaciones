@@ -24,13 +24,13 @@
 global = { \key la \major \time 3/4 }
 
 %% --- El bajo obstinado (4 compases) -----------------------
-celula = { la,2 re4 | mi2 fas4 | si,4 dos re | mi2. | } 
+celula = { la,2 re4 | mi2 fas4 | si,4 dos4 re4 | mi2. | } 
 
 %%{ la,4~la,8.. r32 re8.. r32 | mi4~mi8.. r32 fas8.. r32 | si,8.. r32 dos8.. r32 re8.. r32 | mi2~mi8. r16 | }
 
-celulamenor = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2.} 
+celulamenor = { fas2 dos4  | la,4  re4 si,4  | mi4 la,4 si,4 | dos2.} 
 
-celulamenora = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2 do8. r16 } 
+celulamenora = { fas2 dos4  | la,4  re4 si,4  | mi4 la,4 si,4 | dos2 do8. r16 } 
 
  
 
@@ -40,50 +40,64 @@ celulamenora = { fas2 dos4  | la,4  re si,4  | mi4 la, si, | dos2 do8. r16 }
 bajo = {
   \repeat unfold 6 { \celula \bar "||" \celula }
 
-
-    %% cc. 49–52 · dúo en el pentagrama del bajo (arriba: el tema en S;
+  %% cc. 49–52 · dúo en el pentagrama del bajo (arriba: el tema en S;
   %%            la otra voz del dúo está en voces.ly, voz X)
-  la,4 dos si,     | % c.49
-  sols, la, re    | % c.50
-  sol fas si,  | % c.51
-  dos8 re mi2  | % c.52
-
+  la,4 dos4 si,4                                          | % c.49
+  sols,4 la,4 re4                                         | % c.50
+  sol4 fas4 si,4                                          | % c.51
+  dos8 re8 mi2                                            | % c.52
 
   %% cc. 53–56 · variación del bajo en semicorcheas (arriba: el tema en S)
   %% OJO: el bajo se escribe en alturas ABSOLUTAS (do = Do3, do' = Do4).
-  la4 r16 dos re mi fas sols la si               | % c.53
-  sols8 si, mi sols la16 sols la dos              | % c.54
-  re8 si, la,16 la sols la fas mi fas si,         | % c.55
-  sols8 la16 si la8 dos16 si, dos la mi sols      | % c.56
-
-
+  la4 r16 dos16 re16 mi16 fas16 sols16 la16 si16          | % c.53
+  sols8 si,8 mi8 sols8 la16 sols16 la16 dos16             | % c.54
+  re8 si,8 la,16 la16 sols16 la16 fas16 mi16 fas16 si,16  | % c.55
+  sols8 la16 si16 la8 dos16 si,16 dos16 la16 mi16 sols16  | % c.56
 
   \bar "||"
 
-la2. la la la
+  %% cc. 57–60
+  la,2~ la,8 fas8                                         | % c.57
+  dos4. si,16 dos16 re4                                   | % c.58
+  sol,4 la,8 las,8 si,4                                   | % c.59
+  dos4 re4 mi4 \bar "||"                                  | % c.60
 
-la la la la
+  %% cc. 61–64 · bajo en tresillos
+  \tuplet 3/2 4 { la8 si8 la8 sols8 fas8 mi8 fas8 mi8 re8 | % c.61
+  dos8 mi8 la8 si,8 mi8 sols8 las,4 dos8                  | % c.62
+  re8 dos8 si,8 la,4. fas,8 mi,8 fas,8                    | % c.63
+  sols,8 la,8 si,8 mi8 res8 mi8 mi,4. } \bar "||"         | % c.64
 
-  %% cc. 65–68 · hueco para la nueva variación sobre el bajo de quintas
-  la,4 r re4 | sol2 dos4 | fas2 si,4 | mi2. | \bar "||"
+  %% cc. 65–68 · bajo de quintas (1ª vez, termina en Mi)
+  la,4 r4 re4                                             | % c.65
+  sols4 r4 dos4                                           | % c.66
+  fas4 r4 si,4                                            | % c.67
+  mi2. \bar "||"                                          | % c.68
 
+  %% cc. 69–72 · bajo de quintas (2ª vez, termina en Mi)
+  la,4 r4 re4                                             | % c.69
+  sols4 r4 dos4                                           | % c.70
+  fas4 r4 si,4                                            | % c.71
+  mi2. \bar "||"                                          | % c.72
 
-  la,4 r re4 | sol2 dos4 | fas2 si,4 | mi2. | \bar "||"
+  %% cc. 73–76 · bajo de quintas hacia Fa# menor (termina Do# Si# Do#)
+  la,4 r4 re4                                             | % c.73
+  sol4 r4 dos4                                            | % c.74
+  fas4 r4 si,4                                            | % c.75
+  dos4 sis,4 dos4                                         | % c.76
 
-  %% cc. 69–72 · variación de quintas que ya existía (hacia Fa# menor)
-  %% cc. 73–84 · Fa# menor: celulamenor + celulamenor (nueva) + celulamenora
-  la,4 r re4 | sol2 dos4 | fas2 si,4 | dos4 sis, dos | 
-\celulamenor \bar "||"
-  \celulamenor \bar "||"   % cc. 77–80 · nueva variación sobre el bajo de Fa# menor
+  %% cc. 77–92 · Fa# menor
+  \celulamenor \bar "||"     % cc. 77–80 · variación en Fa# menor
+  \celulamenor \bar "||"     % cc. 81–84 · hueco (1ª vez)
+  \celulamenor \bar "||"     % cc. 85–88 · hueco (2ª vez)
+  \celulamenora              % cc. 89–92 · con la 4ª voz, vuelta a La
 
-    \celulamenor \bar "||"   % cc. 77–80 · nueva variación sobre el bajo de Fa# menor
-
-    
-  \celulamenora
-
-
-
- si,2. dos2. re2. mi2~ <mi, mi>4 la,2.   % cc.85–89 (c.88: Mi2 añadido en el 3er tiempo)
+  %% cc. 93–97 · final: Si – Do# – Re – Mi – La
+  si,2.                                                   | % c.93
+  dos2.                                                   | % c.94
+  re2.                                                    | % c.95
+  mi2~ <mi, mi>4                                          | % c.96   (Mi2 añadido en el 3er tiempo)
+  la,2.                                                   | % c.97
   \bar "|."
 }
 
