@@ -63,7 +63,7 @@ bajo = {
   dos4 re4 mi4 \bar "||"                                  | % c.60
 
   %% cc. 61–64 · bajo en tresillos
-  \tuplet 3/2 4 { la8 si8 la8 sols8 fas8 mi8 fas8 mi8 re8 | % c.61
+  \tuplet 3/2 4 { la4 la8 sols8 fas8 mi8 fas8 mi8 re8 | % c.61
   dos8 mi8 la8 si,8 mi8 sols8 las,4 dos8                  | % c.62
   re8 dos8 si,8 la,4. fas,8 mi,8 fas,8                    | % c.63
   sols,8 la,8 si,8 mi8 res8 mi8 mi,4. } \bar "||"         | % c.64
