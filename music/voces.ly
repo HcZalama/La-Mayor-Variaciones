@@ -46,14 +46,14 @@ material = {
       dos4 la4 fas'4                       | % c.1
       si,4 mi8 re8 dos4                    | % c.2
       re4 mi8. re32 mi32 fas4              | % c.3
-      mi4 la,8 si16 la sols4\prall              | % c.4
+      sols8 mi8 dos8 la8 sols4\prall       | % c.4
     }
     {                                   % A
       %sols8 la sols fas si, re
       mi4 dos4 re8 la'8                    | % c.1
       sols2 la4                            | % c.2
       si4 la4. si16 la16                   | % c.3
-      sols4 dos,4 si8 re8            | % c.4
+      si4 r8 dos,8 si8 re8                 | % c.4
     }
     \vacio                              % X
     \vacio                              % Y
@@ -75,10 +75,8 @@ material = {
     \vacio                              % X
     \vacio                              % Y
 
-                       % Y
-
   %% ╔═════════════════════════════════════════════════════════╗
-  %% ║  SISTEMA 2 · cc. 9–16                                   ║
+  %% ║  SISTEMA 2 · cc. 9–16                                  ║
   %% ╚═════════════════════════════════════════════════════════╝
 
   %% ── Bloque 3 · cc. 9–12 · S + A ────────────────────────────
@@ -87,13 +85,13 @@ material = {
       la8 la16 si16 dos8 re16 mi16 fas4      | % c.9
       r8 mi16 fas16 sols8 la16 si16 la4~     | % c.10
       la4 sols4 fas4                        | % c.11
-      mi4 sols8 si, mi re          | % c.12
+      mi8 fas8 sols8 si,8 mi8 re8            | % c.12
     }
     {                                   % A
       la8 r8 r4 r8 si,16 la16                | % c.9
       sols4 r4 r8 fas'16 mi16                | % c.10
       re8 mi16 fas16 mi8 sols16 la16 si8 la8 | % c.11
-      la8 sols8 r4 sols4           | % c.12
+      sols8 r8 r4 sols4                      | % c.12
     }
     \vacio                              % X
     \vacio                              % Y
@@ -137,8 +135,6 @@ material = {
     \vacio                              % X
     \vacio                              % Y
 
-                          % Y
-
   %% ── Bloque 6 · cc. 21–24 · S (semicorcheas) + A ────────────
   \bloque
     {                                   % S
@@ -160,8 +156,8 @@ material = {
   %% ║  SISTEMA 4 · cc. 25–32                                  ║
   %% ╚═════════════════════════════════════════════════════════╝
 
-  %% ── Bloque 7 · cc. 25–28 ──────────────────────────────
-      \bloque
+  %% ── Bloque 7 · cc. 25–28 · S + A ───────────────────────────
+  \bloque
     {                                   % S
       dos4 la'8 sol8 fas8 mi8                           | % c.25
       mi8 re8 dos8 mi8 las,8. fas'16              | % c.26
@@ -175,12 +171,11 @@ material = {
       r8 si,8 mi8 re16 dos16 re8 dos16 si16             | % c.28
     }
     \vacio                              % X
-    \vacio                              % A
+    \vacio                              % Y
 
-
-
+  %% ── Bloque 8 · cc. 29–32 · S + A ───────────────────────────
   \bloque
-   {                         % S
+    {                         % S
       la4 sols8 sol8 fas8 fa8              | % c.29
       mi4 mib8 re8 dos4                    | % c.30
       re4 mi8 mis8 fas4                    | % c.31
@@ -195,9 +190,13 @@ material = {
     \vacio                              % X
     \vacio                              % Y
 
+  %% ╔═════════════════════════════════════════════════════════╗
+  %% ║  SISTEMA 5 · cc. 33–40                                  ║
+  %% ╚═════════════════════════════════════════════════════════╝
+
   %% ── Bloque 9 · cc. 33–36 · S + A
   \bloque
-     {                         % S
+    {                         % S
       dos8 mi8 dos8 sols8 fas8 fas'8       | % c.33
       fas8 sols,8 mi'8 sols,8 mi'8 la,8    | % c.34
       re8 si'8 la8 mi8 fas8 dos'8          | % c.35
@@ -237,41 +236,39 @@ material = {
   %% ║  SISTEMA 6 · cc. 41–48                                  ║
   %% ╚═════════════════════════════════════════════════════════╝
 
-  %% ── Bloque 11 · cc. 41–44 ──────────────────────────────
- \bloque
-     {                              % S
+  %% ── Bloque 11 · cc. 41–44 · S (semicorcheas) + A ───────────
+  \bloque
+    {                              % S
       la4 la,16 dos16 mi16 sols16 la,16 dos16 re16 fas16                       | % c.41
       sols,16 si16 re16 fas16 si,16 re16 fas16 sols16 las16 dos,16 fas16 las16 | % c.42
       si16 fas,16 si16 re16 mi16 mi,16 sols16 dos16 fas16 la,16 si16 fas'16    | % c.43
-      mi16 mi,16 la16 dos16 mi16 mi,16la16 si16 mi16 mi,16 sols16 re'16        | % c.44
+      mi16 mi,16 la16 dos16 mi16 mi,16 la16 si16 mi16 mi,16 sols16 re'16       | % c.44
     }
-     {
+    {                              % A
       dos4 r2                                                                  | % c.41
       r2.                                                                      | % c.42
       r2.                                                                      | % c.43
       r2.                                                                      | % c.44
-    }                             % A
+    }
     \vacio                              % X
     \vacio                              % Y
 
-  %% ── Bloque 12 · cc. 45–48 ──────────────────────────────
-         \bloque
-     {                              % S
+  %% ── Bloque 12 · cc. 45–48 · S + A ──────────────────────────
+  \bloque
+    {                              % S
       dos8 dos16 re16 mi8 re16 mi16 fas8 mi16 fas16                         | % c.45
       sols4 r2                                                              | % c.46
       r8 si16 la16 sols16 mis16 dos16 si16 la16 re16 dos16 si16             | % c.47
       la16 mi'16 dos16 si16 la16 mi'16 si16 la16 sols16 re'16 fas,16 sols16 | % c.48
     }
-     {                              % A
+    {                              % A
       r2.                                                                   | % c.45
       r8 mi16 fas16 sols8 fas16 sols16 las8 sols16 las16                    | % c.46
       si4 mis,4 fas4                                                        | % c.47
       mi2~mi8 re8                                                           | % c.48
     }
     \vacio                              % X
-    \vacio                          % Y
-
-  
+    \vacio                              % Y
 
   %% ╔═════════════════════════════════════════════════════════╗
   %% ║  SISTEMA 7 · cc. 49–56                                  ║
@@ -279,13 +276,13 @@ material = {
 
   %% ── Bloque 13 · cc. 49–52 · tema en S + dúo en el pentagrama del bajo (voz X) ─
   \bloque
-         {                              % S
+    {                                   % S
       la4 la4 re4                          | % c.49
       mi2 fas4                             | % c.50
       si,4 dos4 re4                        | % c.51
       mi2.                                 | % c.52
     }
-\vacio                              % A
+    \vacio                              % A
     \fixed do {                         % X  (dúo con el bajo, en el pentagrama de abajo)
       \xInf r4 la8 mi8 fas8 la8            | % c.49
       si8 mi8 dos8 la16 sol16 fas8 re'8   | % c.50
@@ -306,8 +303,6 @@ material = {
     \vacio                              % X
     \vacio                              % Y
 
-
-
   %% ╔═════════════════════════════════════════════════════════╗
   %% ║  SISTEMA 8 · cc. 57–64                                  ║
   %% ╚═════════════════════════════════════════════════════════╝
@@ -320,12 +315,12 @@ material = {
       si,4 dos4 re4                              | % c.59
       mi2.                                       | % c.60
     }
-    {
+    {                                   % A
       dos4 dos8 mi8 fas8 la8                     | % c.57
       sol16 la16 sol16 fas16 mi4 la8 si,16 dos16 | % c.58
       re8 sol8 fas8 mi8 re8 fas8                 | % c.59
       la,8 sols16 la16 si8 la8 sols8 re'8        | % c.60
-    }                             % A
+    }
     \vacio                              % X
     \vacio                              % Y
 
@@ -337,124 +332,156 @@ material = {
       si,4 dos4 re4                        | % c.63
       mi2.                                 | % c.64
     }
-            \tuplet 3/2 4 {   dos2. re4. la'4. sols4 si8 fas8 sols8 mi8 fas4 sols8 la8 mi8 dos8 la'4. si4. si8 la8 sols8 sols8 si,8 re8 }   % cc.61–64 · A
+    {                                   % A  (tresillos)
+      \tuplet 3/2 4 { dos2. re4.                 | % c.61
+      la'4. sols4 si8 fas8 sols8 mi8             | % c.62
+      fas4 sols8 la8 dos,8 mi8 la4.              | % c.63
+      si4.~ si8 la8 sols8 sols8 si,8 re8 }       | % c.64
+    }
     \vacio                              % X
     \vacio                              % Y
-
-                           % Y
 
   %% ╔═════════════════════════════════════════════════════════╗
   %% ║  SISTEMA 9 · cc. 65–72                                  ║
   %% ╚═════════════════════════════════════════════════════════╝
 
   %% ── Bloque 17 · cc. 65–68 · S + A (bajo de quintas, 1ª vez) ─
-      \bloque
-    {
-      mi4 la8 mi8 fas16 mi16 re16 dos16              | % c.65
-      si8 mi16 fas16 sols8 re8 mi16 re16 dos16 si16  | % c.66
-      la8 re16 mi16 fas8 dos8 res16 fas16 mi16 res16   | % c.67
-      mi16 re16 dos8 si16 dos16 re8 sols,16 la16 si8 | % c.68
-    }                            % S
-      {
-      dos4 r16 mi fas sols la16 sols16 fas16 mi16                | % c.65
-      re4 r16 fas sols la sols16 fas16 mi16 re16                  | % c.66
-      dos4 r16 mi fas sols fas8 sols16 la                                 | % c.67
-      sols8 la8 sols8 fas8 si,8 re8                  | % c.68
-    }                                       % A
+  \bloque
+    {                                   % S
+      mi4 la8 mi8 fas16 mi16 re16 dos16               | % c.65
+      si8 mi16 fas16 sols8 re8 mi16 re16 dos16 si16   | % c.66
+      la8 re16 mi16 fas8 dos8 res16 fas16 mi16 res16  | % c.67
+      mi16 re16 dos8 si16 dos16 re8 sols,16 la16 si8  | % c.68
+    }
+    {                                   % A
+      dos4 r16 mi16 fas16 sols16 la16 sols16 fas16 mi16 | % c.65
+      re4 r16 fas16 sols16 la16 sols16 fas16 mi16 re16  | % c.66
+      dos4 r16 mi16 fas16 sols16 fas8 sols16 la16       | % c.67
+      sols8 la8 sols8 fas8 si,8 re8                     | % c.68
+    }
     \vacio                              % X
     \vacio                              % Y
 
   %% ── Bloque 18 · cc. 69–72 · S + A (bajo de quintas, 2ª vez) ─
-    \bloque
-    {
-      la4 dos8 la8 fas8 re'16 dos16       | % c.69
-      si16 la sols la si8 sols mi8 dos'16 si16     | % c.70
-      la16 sols fas sols la8 fas8 res8 si'16 la16   | % c.71
-      sols16 fas mi fas sols16 fas mi fas sols8 fas16 sols    | % c.72
-    }                            % S
-    {
-      dos8 re8 mi8 dos re4                     | % c.69
-      re16 dos si8 r16 re dos si dos4                    | % c.70
-      dos16 si la8  r16 dos si  la si4                    | % c.71
-      si16 la sols la si16 la sols la si8 la16 si          | % c.72
-    }                           % A
+  \bloque
+    {                                   % S
+      la4 dos8 la8 fas8 re'16 dos16                           | % c.69
+      si16 la16 sols16 la16 si8 sols8 mi8 dos'16 si16         | % c.70
+      la16 sols16 fas16 sols16 la8 fas8 res8 si'16 la16       | % c.71
+      sols16 fas16 mi16 fas16 sols16 fas16 mi16 fas16 sols8 fas16 sols16 | % c.72
+    }
+    {                                   % A
+      dos8 re8 mi8 dos8 re4                             | % c.69
+      re16 dos16 si8 r16 re16 dos16 si16 dos4           | % c.70
+      dos16 si16 la8 r16 dos16 si16 la16 si4            | % c.71
+      si16 la16 sols16 la16 si16 la16 sols16 la16 si8 la16 si16 | % c.72
+    }
     \vacio                              % X
-    \vacio    
+    \vacio                              % Y
 
   %% ╔═════════════════════════════════════════════════════════╗
   %% ║  SISTEMA 10 · cc. 73–80                                 ║
   %% ╚═════════════════════════════════════════════════════════╝
 
   %% ── Bloque 19 · cc. 73–76 · S + A · bajo de quintas hacia Fa# menor ─
-\bloque
-         {                              % S
+  \bloque
+    {                                   % S
       la4 dos,8 mi8 fas8 la8~                     | % c.73
       la8 sol8 si,8 re8 mi8 sol8~                 | % c.74
       sol8 fas8 las,8 dos8 re8 fas8               | % c.75
       mis4 fas8 la8 sols8 mis'8                   | % c.76
     }
-{                                   % A
+    {                                   % A
       dos4 r4 re8 dos8                            | % c.73
       si4 r4 dos8 si8                             | % c.74
       las4 r4 si8 la8                             | % c.75
       sols8 dos8 res8 fas8 mis16 res16 dos16 si16 | % c.76
     }
     \vacio                              % X
-    \vacio                          % Y
+    \vacio                              % Y
 
   %% ── Bloque 20 · cc. 77–80 · S + A · Fa# menor (celulamenor) ─
-\bloque
-         {                              % S
+  \bloque
+    {                                   % S
       fas8 mi16 re16 dos8 si8 la8 sols8    | % c.77
       la8 dos8 re8 la8 sols8 si8           | % c.78
       dos8 si8 mi4 re4                     | % c.79
       dos4 r8 dos16 dos16 dos8 dos16 dos16 | % c.80
     }
-{                                   % A
+    {                                   % A
       la4 r4 mis'4                         | % c.77
       fas8 mis8 fas4 re8 sols,8            | % c.78
       sols'4 dos,8 mi8 sols8 fas8          | % c.79
       mis4 r2                              | % c.80
     }
     \vacio                              % X
-    \vacio                          % Y
+    \vacio                              % Y
 
-  %% ── Bloque 21 · cc. 81–84 · HUECO sobre Fa# menor (1ª vez)
+  %% ╔═════════════════════════════════════════════════════════╗
+  %% ║  SISTEMA 11 · cc. 81–88                                 ║
+  %% ╚═════════════════════════════════════════════════════════╝
+
+  %% ── Bloque 21 · cc. 81–84 · S + A (A en tresillos) · Fa# menor (1ª vez)
   \bloque
-    \vacio                              % S
-    \vacio                              % A
+    {                                   % S
+      la'2 sols4                           | % c.81
+      fas2.                                | % c.82
+      mi2 re4                              | % c.83
+      dos2.                                | % c.84
+    }
+    {                                   % A  (tresillos)
+      \tuplet 3/2 4 { fas4 sols8 la8 sols8 fas8 mis8 res8 mis8 | % c.81
+      fas8 dos8 si8 la8 si8 dos8 re8 si'8 la8                  | % c.82
+      sols8 la8 si8 dos8 la8 sols8 fas8 sols8 fas8             | % c.83
+      mis4. mis4. mis4. }                                      | % c.84
+    }
     \vacio                              % X
     \vacio                              % Y
 
-  %% ── Bloque 22 · cc. 85–88 · HUECO sobre Fa# menor (2ª vez)
+  %% ── Bloque 22 · cc. 85–88 · S + A en tresillos · Fa# menor (2ª vez)
   \bloque
-    \vacio                              % S
-    \vacio                              % A
+    {                                   % S  (tresillos)
+      \tuplet 3/2 4 { fas4. fas8 mis8 fas8 mi8 la,8 mi'8 | % c.85
+      fas8 re8 dos8 re8 do8 re8~ re8 si'8 sol8~          | % c.86
+      sol8 fas8 mi8 fas8 dos8 la8 sols8 la8 si8          | % c.87
+      la8 sols8 la8 sols8 fas8 sols8 fas4 mis8 }         | % c.88
+    }
+    {                                   % A  (tresillos)
+      \tuplet 3/2 4 { la4 sols8 la8 sols8 la8 sols8 mi8 dos8 | % c.85
+      re8 fas8 mi8 fas8 mi8 fas8 sol8 re'8 si8               | % c.86
+      si4. dos8 la8 fas8 mi4 re8                             | % c.87
+      dos8 si8 dos8 dos4. dos4. }                            | % c.88
+    }
     \vacio                              % X
     \vacio                              % Y
 
-  %% ── Bloque 23 · cc. 89–92
-\bloque
-         {                              % S
-      dos8 la8 la8 fas8 sols16 la16 sols16 la16                                 | % c.89
+  %% ╔═════════════════════════════════════════════════════════╗
+  %% ║  SISTEMA 12 · cc. 89–97                                 ║
+  %% ╚═════════════════════════════════════════════════════════╝
+
+  %% ── Bloque 23 · cc. 89–92 · S + X + Y (4ª voz) · vuelta a La ─
+  \bloque
+    {                                   % S
+      dos'8 la8 la8 fas8 sols16 la16 sols16 la16                                 | % c.89
       sol16 dos,16 sol'16 dos,16 re16 fas16 fas16 la16 si16 res,16 si'16 res,16 | % c.90
       mi16 sol16 sol16 si16 dos16 dos,16 mi16 sol16 re16 fas'16 mi16 re16       | % c.91
       dos8 r8 re8 dos16 si16 la8. r16                                           | % c.92
     }
-\vacio                              % A
+    \vacio                              % A
     \fixed do {                         % X  (4ª voz, en el pentagrama del bajo)
       \xInf \voiceThree s2.                                                     | % c.89
       mi4 fas4 fas4                                                             | % c.90
       sol4 mi4 r4                                                               | % c.91
       sols2 fas8. r16                                                           | % c.92
     }
-    {                               % Y
-      r2. \yInf                                                                 | % c.89
+    {                                   % Y
+      r2. \yInf                                                                | % c.89
       sol'4 fas4 la4                                                            | % c.90
       sol4 sol4 fas8 \ySup sol'16 fas16                                         | % c.91
       mis2 fas8. r16                                                            | % c.92
     }
 
+  %% ── Bloque 24 · cc. 93–96 · final: arpegios en S ───────────
   \bloque
     \fixed do {                         % S
       \voiceOne r4 si''16 sols''16 fas''16 re''16 si'16 sols'16 fas'16 re'16         | % c.93

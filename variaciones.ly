@@ -57,7 +57,7 @@ bajo = {
   \bar "||"
 
   %% cc. 57–60
-  la,2~ la,8 fas8                                         | % c.57
+  la,4 r4 r8 fas,8                                         | % c.57
   dos4. si,16 dos16 re4                                   | % c.58
   sol,4 la,8 las,8 si,4                                   | % c.59
   dos4 re4 mi4 \bar "||"                                  | % c.60
@@ -66,7 +66,7 @@ bajo = {
   \tuplet 3/2 4 { la4 la8 sols8 fas8 mi8 fas8 mi8 re8 | % c.61
   dos8 mi8 la8 si,8 mi8 sols8 las,4 dos8                  | % c.62
   re8 dos8 si,8 la,4. fas,8 mi,8 fas,8                    | % c.63
-  sols,8 la,8 si,8 mi8 res8 mi8 mi,4. } \bar "||"         | % c.64
+  sols,8 la,8 si,8 dos8 res8 mi8 mi,4. } \bar "||"         | % c.64
 
   %% cc. 65–68 · bajo de quintas (1ª vez, termina en Mi)
   la,4 r4 re4                                             | % c.65
